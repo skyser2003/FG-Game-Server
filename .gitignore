@@ -30,6 +30,13 @@
 
 # Visual Studio
 .vs/
+**/[Dd]ebug/*
+**/[Rr]elease/*
+**/ipch/*
+*.opendb
+*.sdf
+*.VC.db
+*.suo
 
 # Project
 **/node_modules/
