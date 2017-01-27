@@ -1,0 +1,6 @@
+[submodule "FG-Network"]
+	path = FG-Network
+	url = https://github.com/skyser2003/FG-Network
+[submodule "FTL"]
+	path = FTL
+	url = https://github.com/skyser2003/FTL
