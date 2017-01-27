@@ -1,0 +1,18 @@
+package PKS;
+
+message CM_JOIN_MEMBER
+{
+	required string id = 1;
+	required string pw = 2;
+}
+
+message CM_LOGIN
+{
+	required string id = 1;
+	required string pw = 2;
+}
+
+message CM_SET_FAMILY_NAME
+{
+	required string familyName = 1;
+}

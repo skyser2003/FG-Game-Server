@@ -1,0 +1,102 @@
+import "etc/struct_etc.proto";
+
+package PKS;
+
+message ZC_ME_CONNECTED
+{
+	required int32 userID = 1;
+	required string id = 2;
+	required FieldObjectBasicInfo objInfo = 3;
+}
+
+message ZC_OTHER_USER_CONNECTED
+{
+	required int32 userID = 1;
+	required string id = 2;
+	required FieldObjectBasicInfo objInfo = 3;
+}
+
+message ZC_EXIST_USER_INFORMATION
+{
+	repeated int32 userIDList = 1;
+	repeated string idList = 2;
+	repeated FieldObjectBasicInfo objInfoList = 3;
+}
+
+message ZC_USER_DISCONNECTED
+{
+	required int32 userID = 1;
+}
+
+message ZC_MONSTER_APPEARED
+{
+	required FieldObjectBasicInfo objInfo = 1;
+	required int32 monsterID = 2;
+}
+
+message ZC_MOVE
+{
+	required int32 objID = 1;
+	required float speed = 2;
+	required Vec2 moveDir = 3;
+	required float lookAngle = 4;
+}
+
+message ZC_STOP
+{
+	required int32 objID = 1;
+	required Vec2 position = 2;
+}
+
+message ZC_EVADE
+{
+	required int32 objID = 1;
+	required Vec2 moveDir = 2;
+	required float lookAngle = 3;
+}
+
+message ZC_DIED
+{
+	required int32 objID = 1;
+}
+
+message ZC_REVIVE
+{
+	required int32 objID = 1;
+}
+
+message ZC_USE_HP_POTION
+{
+	required int32 userID = 1;
+}
+
+message ZC_MOVE_DEST
+{
+	required int32 objID = 1;
+	required Vec2 dest = 2;
+	required float speed = 3;
+}
+
+message ZC_ENTER_FIELD
+{
+	required int32 fieldID = 1;
+}
+
+message ZC_ATTACK
+{
+	required int32 objID = 1;
+}
+
+message ZC_GET_HIT
+{
+	required int32 damage = 1;
+}
+
+message ZC_DEAD
+{
+	required int32 objID = 1;
+}
+
+message ZC_PING
+{
+}

@@ -1,0 +1,34 @@
+package PKS;
+
+message MC_JOIN_MEMBER_RESULT
+{
+	enum RESULT
+	{
+		SUCCESS = 1;
+		FAIL = 2;
+	}
+
+	required RESULT result = 1;
+}
+
+message MC_LOGIN_RESULT
+{
+	enum RESULT
+	{
+		SUCCESS = 1;
+		FAIL = 2;
+	}
+
+	required RESULT result = 1;
+}
+
+message MC_SET_FAMILY_NAME_RESULT
+{
+	enum RESULT
+	{
+		SUCCESS = 1;
+		FAIL = 2;
+	}
+
+	required RESULT result = 1;
+}
