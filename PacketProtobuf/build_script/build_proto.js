@@ -45,7 +45,7 @@ var cppOutArgs = inputDirs.map(inputDir => { return '--proto_path=' + inputDir }
 ]).concat(subDirs);
 
 var cppOut = spawnSync(protoc, cppOutArgs);
-printLog('Cpp', cppOut);
+helper.printSpawnLog('Cpp', cppOut);
 
 if (csharpDir !== undefined) {
     console.log(csharpDir);
@@ -62,23 +62,7 @@ if (csharpDir !== undefined) {
             String.raw`-i:..\src_proto\proto.protobin`
         ]);
 
-    printLog('CSharp', csharpOutput);
+    helper.printSpawnLog('CSharp', csharpOutput);
 }
 
 console.log('protobuf source build done');
-
-function printLog(prefix, spawn) {
-    var stdout = spawn.stdout;
-    var stderr = spawn.stdout;
-
-    if (spawn.error) {
-        console.log(prefix + ' ' + spawn.error.toString());
-    }
-    else {
-        var stdoutStr = (stdout === null || stdout.length == 0) ? 'no stdout' : stdout.toString();
-        var stderrStr = (stderr === null || stderr.length == 0) ? 'no stderr' : stderr.toString();
-
-        console.log(prefix + ' stdout: ' + stdoutStr);
-        console.log(prefix + ' stderr: ' + stderrStr);
-    }
-}

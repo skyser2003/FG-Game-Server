@@ -59,6 +59,23 @@ var getAllDirs = function (dir) {
     return ret;
 };
 
+function printSpawnLog(prefix, spawn) {
+    var stdout = spawn.stdout;
+    var stderr = spawn.stdout;
+
+    if (spawn.error) {
+        console.log(prefix + ' ' + spawn.error.toString());
+    }
+    else {
+        var stdoutStr = (stdout === null || stdout.length == 0) ? 'no stdout' : stdout.toString();
+        var stderrStr = (stderr === null || stderr.length == 0) ? 'no stderr' : stderr.toString();
+
+        console.log(prefix + ' stdout: ' + stdoutStr);
+        console.log(prefix + ' stderr: ' + stderrStr);
+    }
+}
+
 module.exports.getAllFiles = getAllFiles;
 module.exports.getAllDirsContainingExtension = getAllDirsContainingExtension;
 module.exports.getAllDirs = getAllDirs;
+module.exports.printSpawnLog = printSpawnLog;
