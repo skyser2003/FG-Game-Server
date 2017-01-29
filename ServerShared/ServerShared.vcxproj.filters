@@ -60,6 +60,9 @@
     <ClInclude Include="include\MessageArgument.h">
       <Filter>MessageSystem\Argument</Filter>
     </ClInclude>
+    <ClInclude Include="include\ServerSharedPacketHelper.h">
+      <Filter>Packet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\NetworkClient.cpp">
@@ -85,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="src\MessageArgument.cpp">
       <Filter>MessageSystem\Argument</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ServerSharedPacketHelper.cpp">
+      <Filter>Packet</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
