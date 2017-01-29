@@ -24,7 +24,7 @@ catch (err) {
 var protoc = '';
 
 if (os.platform() == 'win32') {
-    protoc = String.raw`..\protoc\protoc`;
+    protoc = path.resolve(String.raw`..\protoc\protoc`);
 } else {
     protoc = 'protoc';
 }
@@ -70,9 +70,14 @@ function printLog(prefix, spawn) {
     var stdout = spawn.stdout;
     var stderr = spawn.stdout;
 
-    var stdoutStr = stdout.length == 0 ? 'no stdout' : stdout.toString();
-    var stderrStr = stderr.length == 0 ? 'no stderr' : stderr.toString();
+    if (spawn.error) {
+        console.log(prefix + ' ' + spawn.error.toString());
+    }
+    else {
+        var stdoutStr = (stdout === null || stdout.length == 0) ? 'no stdout' : stdout.toString();
+        var stderrStr = (stderr === null || stderr.length == 0) ? 'no stderr' : stderr.toString();
 
-    console.log(prefix + ' stdout: ' + stdoutStr);
-    console.log(prefix + ' stderr: ' + stderrStr);
+        console.log(prefix + ' stdout: ' + stdoutStr);
+        console.log(prefix + ' stderr: ' + stderrStr);
+    }
 }
