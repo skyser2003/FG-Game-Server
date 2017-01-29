@@ -1,6 +1,7 @@
 process.chdir(__dirname);
 
 var fs = require('fs');
+var path = require('path');
 var execSync = require('child_process').execSync;
 
 var helper = require('./helper');
@@ -131,9 +132,11 @@ for (var namespace in structList) {
 }
 
 ejs.renderFile('PksInfo.ejs', { list: list }, function (err, str) {
-    fs.writeFile('../Autogen/PksInfo.h', str);
+    fs.writeFile(path.resolve(outputDir, 'PksInfo.h'), str);
+    console.log('PksInfo.h generate done');
 });
 
 ejs.renderFile('PkEnumInfo.ejs', { list: list }, function (err, str) {
-    fs.writeFile('../Autogen/PkEnumInfo.h', str);
+    fs.writeFile(path.resolve(outputDir, 'PkEnumInfo.h'), str);
+    console.log('PkEnumInfo.h generate done');
 });
