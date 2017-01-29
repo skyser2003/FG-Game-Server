@@ -39,7 +39,7 @@ for (var inputDir of inputDirs) {
     }
 }
 
-var cppOutArgs = inputDirs.map(inputDir => { return '--proto_path=' + inputDir }).concat([
+var cppOutArgs = inputDirs.map(inputDir => { return '--proto_path=' + path.resolve(inputDir); }).concat([
     '--cpp_out=' + outputDir,
     '--descriptor_set_out=' + path.resolve(outputDir, 'proto.protobin')
 ]).concat(subDirs);
