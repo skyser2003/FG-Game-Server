@@ -9,7 +9,7 @@ var path = require('path');
 var helper = require('./helper');
 
 var args = process.argv.slice(2);
-var inputDir = args[0];
+var inputDirs = args[0].split(';');
 var outputDir = args[1];
 var csharpDir = args[2];
 
@@ -29,21 +29,22 @@ if (os.platform() == 'win32') {
     protoc = 'protoc';
 }
 
-var realSubDirs = [];
+var subDirs = [];
 
-var subDirs = helper.getAllDirsContainingExtension(inputDir, 'proto');
-for (var i = 0; i < subDirs.length; ++i) {
-    subDirs[i] = path.resolve(subDirs[i], '*.proto');
+for (var inputDir of inputDirs) {
+    var dirs = helper.getAllDirsContainingExtension(inputDir, 'proto');
+
+    for (var dir of dirs) {
+        subDirs.push(path.resolve(dir, '*.proto'));
+    }
 }
 
-var cppOut = spawnSync(protoc,
-    [
-        '--proto_path=' + inputDir,
-        '--cpp_out=' + outputDir,
-        '--descriptor_set_out=' + outputDir + '/proto.protobin',
-    ].concat(subDirs)
-);
+var cppOutArgs = inputDirs.map(inputDir => { return '--proto_path=' + inputDir }).concat([
+    '--cpp_out=' + outputDir,
+    '--descriptor_set_out=' + path.resolve(outputDir, 'proto.protobin')
+]).concat(subDirs);
 
+var cppOut = spawnSync(protoc, cppOutArgs);
 printLog('Cpp', cppOut);
 
 if (csharpDir !== undefined) {
