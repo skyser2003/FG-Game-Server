@@ -55,7 +55,7 @@ if (csharpDir !== undefined) {
         fs.mkdirSync(csharpDir);
     }
 
-    var csharpOutput = spawnSync('../protoc/ProtoGen',
+    var csharpOutput = spawnSync(String.raw`..\protoc\ProtoGen`,
         [
             String.raw`-o:..\..\..\Client\Assets\Script\PacketMsg\PacketProtobuf.cs`,
             String.raw`-i:..\src_proto\proto.protobin`
