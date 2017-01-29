@@ -7,7 +7,7 @@ var args = process.argv.slice(2);
 var protoDir = args[0];
 var srcDir = args[1];
 var infoHeaderDir = args[2];
-var csharpDir = args[3];
+var csharpFile = args[3];
 
 var buildProtoArgs = [
     'build_proto',
@@ -15,8 +15,8 @@ var buildProtoArgs = [
     srcDir
 ];
 
-if (csharpDir !== undefined) {
-    buildProtoArgs.push(csharpDir);
+if (csharpFile !== undefined) {
+    buildProtoArgs.push(csharpFile);
 }
 
 var generatePacketInfoArgs = [

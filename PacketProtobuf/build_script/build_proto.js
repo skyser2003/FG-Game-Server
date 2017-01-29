@@ -11,7 +11,7 @@ var helper = require('./helper');
 var args = process.argv.slice(2);
 var inputDirs = args[0].split(';');
 var outputDir = args[1];
-var csharpDir = args[2];
+var csharpFile = args[2];
 
 // Generate cpp & csharp files from .proto files
 try {
@@ -47,8 +47,8 @@ var cppOutArgs = inputDirs.map(inputDir => { return '--proto_path=' + path.resol
 var cppOut = spawnSync(protoc, cppOutArgs);
 helper.printSpawnLog('Cpp', cppOut);
 
-if (csharpDir !== undefined) {
-    console.log(csharpDir);
+if (csharpFile !== undefined) {
+    var csharpDir = path.dirname(csharpFile);
     try {
         fs.statSync(csharpDir);
     }
@@ -58,8 +58,8 @@ if (csharpDir !== undefined) {
 
     var csharpOutput = spawnSync(String.raw`..\protoc\ProtoGen`,
         [
-            String.raw`-o:..\..\..\Client\Assets\Script\PacketMsg\PacketProtobuf.cs`,
-            String.raw`-i:..\src_proto\proto.protobin`
+            '-o:' + path.resolve(csharpFile),
+            '-i:' + path.resolve(outputDir, 'proto.protobin')
         ]);
 
     helper.printSpawnLog('CSharp', csharpOutput);
