@@ -21,6 +21,26 @@ var getAllFiles = function (dir) {
     return ret;
 };
 
+var getAllFilesWithExtension = function (dir, ext) {
+    var ret = [];
+
+    var dirs = getAllDirs(dir);
+
+    for (var dir of dirs) {
+        var files = fs.readdirSync(dir);
+
+        for (var file of files) {
+            file = path.resolve(dir, file);
+
+            if (fs.statSync(file).isDirectory() === false && path.extname(file) === '.' + ext) {
+                ret.push(file);
+            }
+        }
+    }
+
+    return ret;
+};
+
 var getAllDirsContainingExtension = function (dir, ext) {
     var ret = [];
 
@@ -76,6 +96,7 @@ function printSpawnLog(prefix, spawn) {
 }
 
 module.exports.getAllFiles = getAllFiles;
+module.exports.getAllFilesWithExtension = getAllFilesWithExtension;
 module.exports.getAllDirsContainingExtension = getAllDirsContainingExtension;
 module.exports.getAllDirs = getAllDirs;
 module.exports.printSpawnLog = printSpawnLog;

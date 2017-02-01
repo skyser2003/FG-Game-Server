@@ -21,6 +21,7 @@ if (csharpFile !== undefined) {
 
 var generatePacketInfoArgs = [
     'generate_packet_info',
+    protoDir,
     infoHeaderDir
 ];
 

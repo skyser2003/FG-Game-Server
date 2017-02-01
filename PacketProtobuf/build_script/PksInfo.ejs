@@ -1,14 +1,8 @@
 #pragma once
 
-#include "enum/enum_cm.pb.h"
-#include "enum/enum_mc.pb.h"
-#include "enum/enum_cz.pb.h"
-#include "enum/enum_zc.pb.h"
-
-#include "struct/struct_cm.pb.h"
-#include "struct/struct_mc.pb.h"
-#include "struct/struct_cz.pb.h"
-#include "struct/struct_zc.pb.h"
+<% for (var file of headerList) { %>
+#include "<%= file %>.h"
+<% } %>
 
 // Declaration only
 template <class PKS>
