@@ -89,8 +89,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Autogen\PkEnumInfo.h" />
-    <ClInclude Include="Autogen\PksInfo.h" />
     <ClInclude Include="include\PkEnumInfoHelper.h" />
     <ClInclude Include="include\PksInfoHelper.h" />
     <ClInclude Include="protobuf\config.h" />
@@ -192,44 +190,6 @@
     <ClInclude Include="protobuf\google\protobuf\wire_format.h" />
     <ClInclude Include="protobuf\google\protobuf\wire_format_lite.h" />
     <ClInclude Include="protobuf\google\protobuf\wire_format_lite_inl.h" />
-    <ClInclude Include="src_proto\enum\enum_cm.pb.h" />
-    <ClInclude Include="src_proto\enum\enum_cz.pb.h" />
-    <ClInclude Include="src_proto\enum\enum_mc.pb.h" />
-    <ClInclude Include="src_proto\enum\enum_zc.pb.h" />
-    <ClInclude Include="src_proto\etc\struct_etc.pb.h" />
-    <ClInclude Include="src_proto\struct\struct_cm.pb.h" />
-    <ClInclude Include="src_proto\struct\struct_cz.pb.h" />
-    <ClInclude Include="src_proto\struct\struct_mc.pb.h" />
-    <ClInclude Include="src_proto\struct\struct_zc.pb.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="proto\enum\enum_cm.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\enum\enum_cz.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\enum\enum_mc.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\enum\enum_zc.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\etc\struct_etc.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\struct\struct_cm.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\struct\struct_cz.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\struct\struct_mc.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
-    <CustomBuild Include="proto\struct\struct_zc.proto">
-      <FileType>Document</FileType>
-    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="protobuf\google\protobuf\compiler\code_generator.cc" />
@@ -306,15 +266,6 @@
     <ClCompile Include="protobuf\google\protobuf\unknown_field_set.cc" />
     <ClCompile Include="protobuf\google\protobuf\wire_format.cc" />
     <ClCompile Include="protobuf\google\protobuf\wire_format_lite.cc" />
-    <ClCompile Include="src_proto\enum\enum_cm.pb.cc" />
-    <ClCompile Include="src_proto\enum\enum_cz.pb.cc" />
-    <ClCompile Include="src_proto\enum\enum_mc.pb.cc" />
-    <ClCompile Include="src_proto\enum\enum_zc.pb.cc" />
-    <ClCompile Include="src_proto\etc\struct_etc.pb.cc" />
-    <ClCompile Include="src_proto\struct\struct_cm.pb.cc" />
-    <ClCompile Include="src_proto\struct\struct_cz.pb.cc" />
-    <ClCompile Include="src_proto\struct\struct_mc.pb.cc" />
-    <ClCompile Include="src_proto\struct\struct_zc.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="protobuf\google\protobuf\compiler\cpp\cpp_test_bad_identifiers.proto" />

@@ -1,6 +1,7 @@
 #pragma once
 
-#include "PksInfo.h"
+template <class Message>
+class PksInfo;
 
 template <class Message>
 constexpr int GetPKSID()
