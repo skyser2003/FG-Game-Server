@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="pch\stdafx.h">
+      <Filter>PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DeltaTime.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AbstractMessageNode.h">
+      <Filter>MessageSystem\Node</Filter>
+    </ClInclude>
+    <ClInclude Include="include\DBManager.h">
+      <Filter>DBManager</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MessageHub.h">
+      <Filter>MessageSystem\Hub</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MessageArgument.h">
+      <Filter>MessageSystem\Argument</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NetworkClient.h">
+      <Filter>Client</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AbstractServer.h">
+      <Filter>AbstractServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ServerSharedPacketHelper.h">
+      <Filter>Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PacketHandler.h">
+      <Filter>Packet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch\stdafx.cpp">
+      <Filter>PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeltaTime.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractMessageNode.cpp">
+      <Filter>MessageSystem\Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DBManager.cpp">
+      <Filter>DBManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageHub.cpp">
+      <Filter>MessageSystem\Hub</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageArgument.cpp">
+      <Filter>MessageSystem\Argument</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NetworkClient.cpp">
+      <Filter>Client</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractServer.cpp">
+      <Filter>AbstractServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ServerSharedPacketHelper.cpp">
+      <Filter>Packet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="AbstractServer">
+      <UniqueIdentifier>{d51789e2-a975-4f9e-a00d-a42d737ddd1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Client">
+      <UniqueIdentifier>{f427ad75-18c3-4da0-90e5-684266e3adb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBManager">
+      <UniqueIdentifier>{e39ef1a2-f484-4e3b-aed8-6a1d118fe64b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageSystem">
+      <UniqueIdentifier>{19975cdd-deda-46c7-8bbf-e7d9d6138c2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageSystem\Hub">
+      <UniqueIdentifier>{9b4831a0-2541-40c7-8888-b159c46c0d2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageSystem\Node">
+      <UniqueIdentifier>{4c828960-eb7f-470b-9020-976045dae6a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageSystem\Argument">
+      <UniqueIdentifier>{18d480a2-1e09-4484-a8dd-eb18971b00c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Packet">
+      <UniqueIdentifier>{2d4ed2b3-8d7d-4de8-b535-a1ce7de5c2a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCH">
+      <UniqueIdentifier>{c471cded-ef5d-4fdc-b5f6-7a4037c17763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{569180dd-3c63-436a-b74c-225fa9731124}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
