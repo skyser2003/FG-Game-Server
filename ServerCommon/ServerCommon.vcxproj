@@ -122,7 +122,6 @@
     <ClInclude Include="include\MessageHub.h" />
     <ClInclude Include="include\NetworkClient.h" />
     <ClInclude Include="include\PacketHandler.h" />
-    <ClInclude Include="include\ServerSharedPacketHelper.h" />
     <ClInclude Include="pch\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +136,6 @@
     <ClCompile Include="src\MessageArgument.cpp" />
     <ClCompile Include="src\MessageHub.cpp" />
     <ClCompile Include="src\NetworkClient.cpp" />
-    <ClCompile Include="src\ServerSharedPacketHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Database\Database.vcxproj">

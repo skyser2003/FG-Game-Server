@@ -1,7 +1,7 @@
 #pragma once
 
 template <class Message>
-class PksInfo;
+class PKSInfo;
 
 template <class Message>
 constexpr int GetPKSID()

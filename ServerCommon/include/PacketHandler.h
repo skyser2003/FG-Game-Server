@@ -5,8 +5,8 @@
 
 #include "google/protobuf/message.h"
 
-#include "PkEnumInfo.h"
-#include "PksInfo.h"
+template <int ENUM>
+class PKENUMInfo;
 
 template <class T>
 class PacketHandler

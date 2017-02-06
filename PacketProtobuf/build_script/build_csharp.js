@@ -12,6 +12,7 @@ var args = process.argv.slice(2);
 var searchDirs = args[0].split(';');
 var inputDirs = args[1].split(';');
 var outputDir = args[2];
+var csharpFile = args[3];
 
 // Generate cpp & csharp files from .proto files
 try {
@@ -39,11 +40,30 @@ for (var inputDir of inputDirs) {
     }
 }
 
-var cppOutArgs = searchDirs.map(searchDir => { return '--proto_path=' + path.resolve(searchDir); }).concat([
-    '--cpp_out=' + outputDir
+var csharpDir = path.dirname(csharpFile);
+try {
+    fs.statSync(csharpDir);
+}
+catch (err) {
+    fs.mkdirSync(csharpDir);
+}
+
+var protobin = path.resolve(outputDir, 'proto.protobin');
+
+var protobinArgs = searchDirs.map(searchDir => { return '--proto_path=' + path.resolve(searchDir); }).concat([
+    '--descriptor_set_out=' + protobin
 ]).concat(subDirs);
 
-var cppOut = spawnSync(protoc, cppOutArgs);
-helper.printSpawnLog('Cpp', cppOut);
+var protobinOutput = spawnSync(protoc, protobinArgs);
+helper.printSpawnLog('Protobin', protobinOutput);
+
+var csharpOutput = spawnSync(String.raw`..\protoc\ProtoGen`, [
+    '-o:' + path.resolve(csharpFile),
+    '-i:' + protobin
+]);
+
+helper.printSpawnLog('CSharp', csharpOutput);
+
+fs.unlinkSync(protobin);
 
 console.log('protobuf source build done');

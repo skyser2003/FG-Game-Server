@@ -25,9 +25,6 @@
     <ClInclude Include="include\AbstractServer.h">
       <Filter>AbstractServer</Filter>
     </ClInclude>
-    <ClInclude Include="include\ServerSharedPacketHelper.h">
-      <Filter>Packet</Filter>
-    </ClInclude>
     <ClInclude Include="include\PacketHandler.h">
       <Filter>Packet</Filter>
     </ClInclude>
@@ -56,9 +53,6 @@
     </ClCompile>
     <ClCompile Include="src\AbstractServer.cpp">
       <Filter>AbstractServer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ServerSharedPacketHelper.cpp">
-      <Filter>Packet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -4,25 +4,21 @@ var fs = require('fs');
 var spawnSync = require('child_process').spawnSync;
 var args = process.argv.slice(2);
 
-var protoDir = args[0];
-var srcDir = args[1];
-var infoHeaderDir = args[2];
-var csharpFile = args[3];
+var searchDir = args[0];
+var protoDir = args[1];
+var outputDir = args[2];
 
 var buildProtoArgs = [
     'build_proto',
+    searchDir,
     protoDir,
-    srcDir
+    outputDir
 ];
-
-if (csharpFile !== undefined) {
-    buildProtoArgs.push(csharpFile);
-}
 
 var generatePacketInfoArgs = [
     'generate_packet_info',
     protoDir,
-    infoHeaderDir
+    outputDir
 ];
 
 var buildProto = spawnSync('node', buildProtoArgs);

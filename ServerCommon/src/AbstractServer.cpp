@@ -3,7 +3,6 @@
 
 #include "NetworkClient.h"
 #include "FGServer.h"
-#include "PacketHandler.h"
 
 AbstractServer::AbstractServer() : server(new FG::Server)
 {
