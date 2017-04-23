@@ -28,6 +28,9 @@
     <ClInclude Include="include\PacketHandler.h">
       <Filter>Packet</Filter>
     </ClInclude>
+    <ClInclude Include="include\Timer.h">
+      <Filter>Util\Timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch\stdafx.cpp">
@@ -53,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="src\AbstractServer.cpp">
       <Filter>AbstractServer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Timer.cpp">
+      <Filter>Util\Timer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +91,12 @@
     </Filter>
     <Filter Include="Time">
       <UniqueIdentifier>{569180dd-3c63-436a-b74c-225fa9731124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{e70dbc87-b124-4e68-9b68-4fd6a6981c3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util\Timer">
+      <UniqueIdentifier>{aa65d4f2-ef72-4f83-8450-1d55ca20600a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

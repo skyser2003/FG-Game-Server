@@ -75,6 +75,7 @@
     <ClInclude Include="include\MessageHub.h" />
     <ClInclude Include="include\NetworkClient.h" />
     <ClInclude Include="include\PacketHandler.h" />
+    <ClInclude Include="include\Timer.h" />
     <ClInclude Include="pch\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +90,7 @@
     <ClCompile Include="src\MessageArgument.cpp" />
     <ClCompile Include="src\MessageHub.cpp" />
     <ClCompile Include="src\NetworkClient.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Database\Database.vcxproj">

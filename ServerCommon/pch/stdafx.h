@@ -4,6 +4,8 @@
 #include <vector>
 #include <functional>
 #include <string>
+#include <chrono>
+#include <unordered_map>
 
 #include <boost/format.hpp>
 
