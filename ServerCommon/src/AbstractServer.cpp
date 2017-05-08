@@ -24,14 +24,20 @@ void AbstractServer::Init(int port)
 
 void AbstractServer::Update(int dt)
 {
+	std::vector<int> doneList;
+
 	for (auto& pair : taskList)
 	{
 		auto& timer = pair.second;
-		bool done = timer->Update();
-		if (done == true)
+		if (timer->Update() == true)
 		{
-			taskList.erase(pair.first);
+			doneList.push_back(pair.first);
 		}
+	}
+
+	for(auto index : doneList)
+	{
+		taskList.erase(index);
 	}
 }
 
