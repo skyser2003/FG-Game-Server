@@ -23,7 +23,7 @@ bool Timer::Update()
 	}
 
 	auto newNow = std::chrono::steady_clock::now();
-	auto diff = now - newNow;
+	auto diff = newNow - now;
 	now = newNow;
 
 	auto milli = std::chrono::duration_cast<std::chrono::milliseconds>(diff).count();
